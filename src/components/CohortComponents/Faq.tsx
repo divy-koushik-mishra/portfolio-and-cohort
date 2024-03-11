@@ -7,7 +7,7 @@ import {
 
 const Faq = () => {
   return (
-    <div className="w-1/2 mb-20">
+    <div className="w-full md:w-1/2 mb-20">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>

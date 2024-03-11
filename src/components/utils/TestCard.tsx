@@ -14,7 +14,7 @@ const TestCard = () => {
     {
       name: "Java Cohort",
       description: "This is the Java cohort.",
-      image: "/tech/python.jpg",
+      image: "/tech/java.png",
       link: "/cohort/java",
     },
     {
@@ -26,30 +26,55 @@ const TestCard = () => {
     {
       name: "C Cohort",
       description: "This is the C cohort.",
-      image: "/tech/python.jpg",
+      image: "/tech/c.png",
       link: "/cohort/c",
     },
   ];
   return (
-    <Carousel className="md:p-20">
-      <CarouselContent>
-        {cohort.map((cohort) => (
-          <Link href={cohort.link} key={cohort.name}>
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3 flex-wrap flex">
-              <Image
-                src={cohort.image}
-                alt="cohort"
-                width={500}
-                height={300}
-                className="rounded w-full text-center"
-              />
-              <h1>{cohort.name}</h1>
-              <p>{cohort.description}</p>
-            </CarouselItem>
-          </Link>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="">
+      <div className="">
+        <Carousel className="md:p-20 hidden md:block">
+          <CarouselContent>
+            {cohort.map((cohort) => (
+              <Link href={cohort.link} key={cohort.name}>
+                <CarouselItem className=" sm:basis-1/2 md:basis-1/3 ">
+                  <Image
+                    src={cohort.image}
+                    alt="cohort"
+                    width={500}
+                    height={300}
+                    className="rounded w-full text-center h-56"
+                  />
+                  <h1>{cohort.name}</h1>
+                  <p>{cohort.description}</p>
+                </CarouselItem>
+              </Link>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
+      <div className="block md:hidden pb-10 border-b border-gray-600">
+        <Carousel className="md:p-20" orientation="vertical">
+          <CarouselContent>
+            {cohort.map((cohort) => (
+              <Link href={cohort.link} key={cohort.name}>
+                <CarouselItem className=" sm:basis-1/2 md:basis-1/3 ">
+                  <Image
+                    src={cohort.image}
+                    alt="cohort"
+                    width={500}
+                    height={300}
+                    className="rounded w-full text-center h-56"
+                  />
+                  <h1 className="pt-2 text-xl font-medium">{cohort.name}</h1>
+                  <p className="pt-2">{cohort.description}</p>
+                </CarouselItem>
+              </Link>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
+    </div>
   );
 };
 

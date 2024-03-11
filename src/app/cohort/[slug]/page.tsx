@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import {
   Breadcrumb,
@@ -7,26 +8,44 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Faq from "@/components/CohortComponents/Faq";
+import { useState, useEffect } from "react";
+import Python from "@/components/CohortComponents/CourseInfo/Python";
+import Java from "@/components/CohortComponents/CourseInfo/Java";
+import C from "@/components/CohortComponents/CourseInfo/C";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
+  const [thumbnailUrl, setThumbnailUrl] = useState("");
+  const [python, setPython] = useState(false);
+  const [java, setJava] = useState(false);
+  const [c, setC] = useState(false);
+  useEffect(() => {
+    if (slug === "python") {
+      setThumbnailUrl("/tech/python.jpg");
+      setPython(true);
+    } else if (slug === "java") {
+      setThumbnailUrl("/tech/java.png");
+      setJava(true);
+    } else if (slug === "c") {
+      setThumbnailUrl("/tech/c.png");
+      setC(true);
+    }
+  }, [slug]);
   // My Post: {params.slug}
   return (
-    <section className="min-h-screen flex flex-col items-center w-full p-10">
-      <div className="container h-4/5 flex  items-center border-b border-gray-700 mb-20">
-        <div className="w-2/5">
+    <section className="min-h-screen flex flex-col items-center w-full py-5 md:p-10">
+      <div className="container h-4/5 flex flex-col md:flex-row items-center border-b border-gray-700 mb-20">
+        <div className="w-full md:w-2/5">
           <Image
-            src="/tech/aws.jpg"
+            src={thumbnailUrl}
             alt="hero"
             width={1920}
             height={1080}
             className="w-full rounded-lg"
           />
         </div>
-        <div className="w-3/5 p-10 ">
+        <div className="w-full md:w-3/5 py-4 md:p-10 ">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -50,61 +69,10 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="">
             <h3 className="text-xl font-semibold my-5">Curriculam</h3>
             <div className="">
-              <p>
-                <p>
-                  <em className="font-bold text-lg">
-                    Weeks 1-2: Introduction to Python
-                  </em>{" "}
-                  <br />
-                  <br /> - History and basics of Python - Setting up Python
-                  development environment - Writing and running simple Python
-                  programs - Introduction to variables and data types <br />
-                  <em className="font-bold text-lg">Weeks 3-4: Control Flow</em>
-                  <br /> - Understanding if statements and loops - Using logical
-                  operators (and, or, not) - Writing programs with loops and
-                  conditions <br />
-                  <em className="font-bold text-lg">
-                    Weeks 5-6: Lists and Strings
-                  </em>{" "}
-                  <br />
-                  <br /> - Declaring and initializing lists - Accessing and
-                  modifying list elements - String manipulation methods - Using
-                  lists and strings in programs <br />
-                  <em className="font-bold text-lg">
-                    Weeks 7-8: Functions
-                  </em>{" "}
-                  <br />
-                  <br /> - Defining and calling functions - Passing arguments to
-                  functions - Returning values from functions - Using functions
-                  to modularize code <br />
-                  <em className="font-bold text-lg">
-                    Weeks 9-10: Dictionaries and Sets
-                  </em>{" "}
-                  <br />
-                  <br /> - Declaring and initializing dictionaries and sets -
-                  Accessing and modifying dictionary and set elements - Using
-                  dictionaries and sets in programs <br />
-                  <em className="font-bold text-lg">
-                    Weeks 11-12: File Handling
-                  </em>{" "}
-                  <br />
-                  <br /> - Reading from and writing to files - Using file
-                  streams in Python - Handling file exceptions - Working with
-                  text files in Python <br />
-                  <em className="font-bold text-lg">
-                    Weeks 13-14: Object-Oriented Programming
-                  </em>{" "}
-                  <br />
-                  <br /> - Introduction to classes and objects - Creating
-                  classNamees and objects in Python - ClassName constructors and
-                  methods - Encapsulation and data hiding <br />
-                  <em className="font-bold text-lg">
-                    Weeks 15-16: Inheritance and Polymorphism
-                  </em>{" "}
-                  <br />
-                  <br /> - Understanding inheritance
-                </p>
-              </p>
+              {python ? <Python /> : null}
+              {java ? <Java /> : null}
+              {c ? <C /> : null}
+
               <button className="border p-3 rounded-[8px] my-5 hover:bg-[#ddd] hover:text-black transition-all">
                 Join Now
               </button>

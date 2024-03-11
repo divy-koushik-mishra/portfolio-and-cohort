@@ -15,7 +15,7 @@ const Contact = () => {
     {
       id: 1,
       name: "Twitter",
-      link: "https://twitter.com/ugwucynthia_",
+      link: "https://twitter.com/divy_koushik",
       icon: "twitter-x",
       color: "blue",
     },
@@ -30,7 +30,7 @@ const Contact = () => {
       id: 3,
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/divy-koushik-mishra",
-      icon: "linkedin-box",
+      icon: "<RiLinkedinBoxFill className='inline-block text-yellow-700 ml-2' />",
       color: "blue",
     },
     {
@@ -48,6 +48,28 @@ const Contact = () => {
       color: "red",
     },
   ];
+
+  const renderSocalMediaIcon = (icon: any) => {
+    switch (icon) {
+      case "twitter-x":
+        return <RiTwitterXFill />;
+      case "github":
+        return <RiGithubFill />;
+      case "linkedin-box-fill":
+        return <RiLinkedinBoxFill />;
+      case "instagram-line":
+        return <RiInstagramLine />;
+      case "mail":
+        return <RiMailFill />;
+      case "stack-overflow-fill":
+        return <RiStackOverflowFill />;
+      case "youtube-fill":
+        return <RiYoutubeFill />;
+      default:
+        return <RiMailFill />;
+    }
+  };
+
   return (
     <section className="relative bg-[url('/contact-1.jpg')] bg-no-repeat bg-cover w-full min-h-screen py-12">
       <div className="relative">
@@ -65,97 +87,18 @@ const Contact = () => {
             the following platforms.
           </p>
           <div className="">
-            {/* {socialList.map((social) => (
+            {socialList.map((social) => (
               <a
                 href={social.link}
                 key={social.id}
-                className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
+                className="flex gap-2 items-center p-2  my-4"
               >
-                <span className="text-2xl text-yellow-500">
-                  <i className={`ri-${social.icon}-fill`}></i>
+                <span className="text-2xl text-[#FBA100]">
+                  {renderSocalMediaIcon(social.icon)}
                 </span>
                 <span>{social.name}</span>
               </a>
-            ))} */}
-            <ol>
-              <li>
-                <a
-                  href={socialList[0].link}
-                  className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
-                >
-                  <span className="text-2xl text-yellow-500">
-                    <RiMailFill className="inline-block text-yellow-700 ml-2" />
-                  </span>
-                  <span>Mail</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={socialList[0].link}
-                  className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
-                >
-                  <span className="text-2xl text-yellow-500">
-                    <RiLinkedinBoxFill className="inline-block text-yellow-700 ml-2" />
-                  </span>
-                  <span>LinkedIn</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={socialList[0].link}
-                  className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
-                >
-                  <span className="text-2xl text-yellow-500">
-                    <RiGithubFill className="inline-block text-yellow-700 ml-2" />
-                  </span>
-                  <span>Github</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={socialList[0].link}
-                  className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
-                >
-                  <span className="text-2xl text-yellow-500">
-                    <RiTwitterXFill className="inline-block text-yellow-700 ml-2" />
-                  </span>
-                  <span>Twitter</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={socialList[0].link}
-                  className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
-                >
-                  <span className="text-2xl text-yellow-500">
-                    <RiStackOverflowFill className="inline-block text-yellow-700 ml-2" />
-                  </span>
-                  <span>Stackoverflow</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={socialList[0].link}
-                  className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
-                >
-                  <span className="text-2xl text-yellow-500">
-                    <RiInstagramLine className="inline-block text-yellow-700 ml-2" />
-                  </span>
-                  <span>Instagram</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={socialList[0].link}
-                  className={`flex gap-2 items-center p-2 text-[#c5c5c5] rounded-xl my-4 w-full`}
-                >
-                  <span className="text-2xl text-yellow-500">
-                    <RiYoutubeFill className="inline-block text-yellow-700 ml-2" />
-                  </span>
-                  <span>YouTube</span>
-                </a>
-              </li>
-            </ol>
+            ))}
           </div>
         </div>
         <div className="w-full md:w-3/5 p-8">
