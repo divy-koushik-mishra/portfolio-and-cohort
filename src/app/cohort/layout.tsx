@@ -6,10 +6,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 bg-[#141819] text-[#ddd]">
-      {/* Include shared UI here e.g. a header or sidebar */}
-      <nav></nav>
-
+    <main className="flex min-h-screen flex-col items-center px-5 md:px-4 bg-[#141819] text-[#ddd]">
       {children}
       <Footer />
     </main>

@@ -31,7 +31,7 @@ const TestCard = () => {
     },
   ];
   return (
-    <div className="">
+    <div className="overflow-hidden ">
       <div className="">
         <Carousel className="md:p-20 hidden md:block">
           <CarouselContent>
@@ -58,7 +58,7 @@ const TestCard = () => {
           <CarouselContent>
             {cohort.map((cohort) => (
               <Link href={cohort.link} key={cohort.name}>
-                <CarouselItem className=" sm:basis-1/2 md:basis-1/3 ">
+                <CarouselItem className="">
                   <Image
                     src={cohort.image}
                     alt="cohort"
