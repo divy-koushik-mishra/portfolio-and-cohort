@@ -1,4 +1,4 @@
-const Card = () => {
+const Card = (props: { url: string | "" }) => {
   return (
     <div className="border w-full md:w-1/2 p-5  rounded-xl">
       <h2 className="text-xl font-bold">About the course</h2>
@@ -11,9 +11,11 @@ const Card = () => {
         commodi omnis enim, laborum exercitationem.
       </p>
       <hr />
-      <button className="border hover:bg-[#ddd] hover:text-black border-white rounded-xl px-12 py-2 mt-5 transition">
-        Project
-      </button>
+      <a href={props.url} target="_blank">
+        <button className="border hover:bg-[#ddd] hover:text-black border-white rounded-xl px-12 py-2 mt-5 transition">
+          Project
+        </button>
+      </a>
     </div>
   );
 };

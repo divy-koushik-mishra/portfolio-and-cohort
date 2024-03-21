@@ -15,15 +15,18 @@ import Card from "@/components/CohortComponents/Card";
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const [thumbnailUrl, setThumbnailUrl] = useState("");
-  const cohortCurriculam = [{}, {}];
+  const [curriculumURL, setCurriculumURL] = useState("");
 
   useEffect(() => {
     if (slug === "python") {
       setThumbnailUrl("/tech/python.jpg");
+      setCurriculumURL("/curriculums/python-curriculum.pdf");
     } else if (slug === "java") {
       setThumbnailUrl("/tech/java.png");
+      setCurriculumURL("/curriculums/java-curriculum.pdf");
     } else if (slug === "c") {
       setThumbnailUrl("/tech/c.png");
+      setCurriculumURL("/curriculums/c-curriculum.pdf");
     }
   }, [slug]);
 
@@ -63,8 +66,8 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="">
             <h3 className="text-xl font-semibold my-5">Curriculam</h3>
             <div className="">
-              <div className="flex flex-col md:flex-row gap-5 w-full">
-                <Card />
+              <div className="flex flex-col md:flex-row gap-5 w-full  ">
+                <Card url={curriculumURL} />
                 <Card />
               </div>
 
