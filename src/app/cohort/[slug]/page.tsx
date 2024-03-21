@@ -68,7 +68,8 @@ export default function Page({ params }: { params: { slug: string } }) {
             <div className="">
               <div className="flex flex-col md:flex-row gap-5 w-full  ">
                 <Card url={curriculumURL} />
-                <Card />
+                <Card url={curriculumURL} />
+                {/* <Card /> */}
               </div>
 
               <button className="border p-3 rounded-[8px] my-5 hover:bg-[#ddd] hover:text-black transition-all">
