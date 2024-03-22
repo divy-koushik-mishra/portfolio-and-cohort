@@ -82,7 +82,10 @@ const Projects = () => {
     },
   ];
   return (
-    <section className="min-h-screen w-full bg-[url('/project-2.jpg')] bg-no-repeat bg-cover ">
+    <section
+      className="min-h-screen w-full bg-[url('/project-2.jpg')] bg-no-repeat bg-cover "
+      id="projects"
+    >
       <h2 className="text-center text-4xl anta-regular py-6 text-[#FBA100]">
         Portfolio Projects Showcase
       </h2>

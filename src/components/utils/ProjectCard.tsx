@@ -24,7 +24,7 @@ const ProjectCard = (props: {
     | undefined;
 }) => {
   return (
-    <div className="flex  p-4 w-56 gap-2 shadow-xl shadow-black rounded-lg">
+    <div className="flex  p-4 w-56 gap-2 shadow-xl shadow-black rounded-lg cursor-pointer">
       <div className="">
         <RiBardFill className="text-yellow-500" />
       </div>

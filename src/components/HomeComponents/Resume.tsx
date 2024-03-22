@@ -53,7 +53,10 @@ const Resume = () => {
     },
   ];
   return (
-    <section className="w-full min-h-screen  bg-[url('/resume-4.jpg')] bg-no-repeat bg-cover py-10">
+    <section
+      className="w-full min-h-screen  bg-[url('/resume-4.jpg')] bg-no-repeat bg-cover py-10"
+      id="resume"
+    >
       <div className="">
         <h2 className="text-center text-4xl anta-regular py-6 text-[#FBA100]">
           Experience and Education

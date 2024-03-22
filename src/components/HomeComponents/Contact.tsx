@@ -71,7 +71,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative bg-[url('/contact-1.jpg')] bg-no-repeat bg-cover w-full min-h-screen py-12">
+    <section
+      className="relative bg-[url('/contact-1.jpg')] bg-no-repeat bg-cover w-full min-h-screen py-12"
+      id="contact"
+    >
       <div className="relative">
         <h1 className="font-black text-7xl text-gray-500 text-center relative z-0 opacity-25">
           CONTACT

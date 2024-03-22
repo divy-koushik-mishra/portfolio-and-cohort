@@ -4,10 +4,10 @@ import React from "react";
 const Navbar = () => {
   const menuItems = [
     { id: 1, name: "Home", link: "/" },
-    { id: 2, name: "About", link: "/about" },
-    { id: 3, name: "Resume", link: "/resume" },
-    { id: 4, name: "Projects", link: "/projects" },
-    { id: 5, name: "Contact", link: "/contact" },
+    { id: 2, name: "About", link: "/#about" },
+    { id: 3, name: "Resume", link: "/#resume" },
+    { id: 4, name: "Projects", link: "/#projects" },
+    { id: 5, name: "Contact", link: "/#contact" },
   ];
   return (
     <nav className="flex w-full justify-between items-center p-4 top-0 sticky z-20 bg-blur backdrop-filter backdrop-blur-sm">

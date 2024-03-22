@@ -43,7 +43,7 @@ const TestCard = () => {
                     alt="cohort"
                     width={500}
                     height={300}
-                    className="rounded w-full text-center h-56"
+                    className="rounded w-full text-center h-56 hover:scale-95 transition-all"
                   />
                   <h1>{cohort.name}</h1>
                   <p>{cohort.description}</p>
