@@ -66,7 +66,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </h2>
 
           <div className="">
-            <div className="">
+            <div className="flex flex-col justify-center items-center">
               {isJavaSlug && (
                 <>
                   <h3 className="text-xl font-semibold my-5">Curriculum</h3>
@@ -83,7 +83,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
               {isJavaSlug && (
                 <Link href="/cohort/java/whatsapp-channel">
-                  <button className="border p-3 rounded-[8px] my-5 hover:bg-[#ddd] hover:text-black transition-all">
+                  <button className="border w-full p-3 rounded-[8px] my-5 hover:bg-[#ddd] hover:text-black transition-all">
                     Join Now
                   </button>
                 </Link>

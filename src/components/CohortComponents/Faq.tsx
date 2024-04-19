@@ -26,7 +26,7 @@ const Faq = () => {
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>
-            What kind of practices are followed in the cohort?
+            What kind of practices are followed at cohort?
           </AccordionTrigger>
           <AccordionContent>
             We strictly adhere to industry-preferred practices to ensure
