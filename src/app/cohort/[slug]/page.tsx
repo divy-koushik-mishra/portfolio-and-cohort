@@ -11,11 +11,13 @@ import {
 import Faq from "@/components/CohortComponents/Faq";
 import { useState, useEffect } from "react";
 import Card from "@/components/CohortComponents/Card";
+import Link from "next/link";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const [thumbnailUrl, setThumbnailUrl] = useState("");
   const [curriculumURL, setCurriculumURL] = useState("");
+  const isJavaSlug = slug === "java";
 
   useEffect(() => {
     if (slug === "python") {
@@ -64,17 +66,28 @@ export default function Page({ params }: { params: { slug: string } }) {
           </h2>
 
           <div className="">
-            <h3 className="text-xl font-semibold my-5">Curriculam</h3>
             <div className="">
-              <div className="flex flex-col md:flex-row gap-5 w-full  ">
-                <Card url={curriculumURL} />
-                <Card url={curriculumURL} />
-                {/* <Card /> */}
-              </div>
+              {isJavaSlug && (
+                <>
+                  <h3 className="text-xl font-semibold my-5">Curriculum</h3>
+                  <div className="flex flex-col md:flex-row gap-5 w-full">
+                    <Card url={curriculumURL} />
+                    {/* <Card url={curriculumURL} /> */}
+                  </div>
+                </>
+              )}
 
-              <button className="border p-3 rounded-[8px] my-5 hover:bg-[#ddd] hover:text-black transition-all">
-                Join Now
-              </button>
+              {!isJavaSlug && (
+                <p className="text-xl text-center">Coming Soon</p>
+              )}
+
+              {isJavaSlug && (
+                <Link href="/cohort/java/whatsapp-channel">
+                  <button className="border p-3 rounded-[8px] my-5 hover:bg-[#ddd] hover:text-black transition-all">
+                    Join Now
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
